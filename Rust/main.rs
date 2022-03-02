@@ -10,13 +10,9 @@ fn main() {
     }
 
     let mut counter = vec![0, 0, 0, 0, 0, 0];
-
-    counter[0] = count_num(&vec, 1);
-    counter[1] = count_num(&vec, 2);
-    counter[2] = count_num(&vec, 3);
-    counter[3] = count_num(&vec, 4);
-    counter[4] = count_num(&vec, 5);
-    counter[5] = count_num(&vec, 6);
+    for i in 0..6 {
+        counter[i] = count_num(&vec, (i + 1).try_into().unwrap());
+    }
 
     for element in counter {
         println!("{}", element);
